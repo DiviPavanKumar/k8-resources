@@ -4,7 +4,7 @@ metadata:
   name: nginx
   labels:
     environment: Dev
-    purpose: ClusterIP
+    app: fronend
 spec:
   containers:
   - name: nginx
@@ -20,7 +20,7 @@ metadata:
 spec:
   selector:
     environment: Dev
-    purpose: ClusterIP
+    app: fronend
   ports:
   - name: name-of-service-port
     protocol: TCP
