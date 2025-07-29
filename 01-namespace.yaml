@@ -1,13 +1,8 @@
 apiVersion: v1
 kind: Namespace
-<<<<<<< HEAD
 metadata: 
   name: roboshop
   labels:
     project: roboshop
     type: network
     name: namespace-roboshop
-=======
-metadata:
-  name: practice
->>>>>>> 1eff53ac05dd424a6a2679c850ba66e04dc26e0b
