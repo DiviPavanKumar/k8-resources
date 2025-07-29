@@ -6,6 +6,6 @@ spec:
   containers: 
     - name: nginx
       image: nginx:latest
-    - name: almaLinux
+    - name: almalinux
       image: almalinux:minimal
       command: ["sleep" , "300"]
