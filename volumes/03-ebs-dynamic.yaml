@@ -9,3 +9,24 @@ spec:
   resources:
     requests:
       storage: 5Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    purpose: ebs-dynamic-practice
+    environment: dev
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1b
+  containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+       - name: persistent-storage
+         mountPath: /usr/share/nginx/html
+  volumes:
+    - name: persistent-storage
+      PersistentVolumeClaim:
+        claimName: persistent-storage
