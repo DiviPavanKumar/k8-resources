@@ -30,3 +30,20 @@ spec:
     - name: persistent-storage
       persistentVolumeClaim:
         claimName: ebs-dynamic
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ebs-dynamic-pod-lb
+  labels:
+    purpose: ebs-dynamic-practice
+    environment: dev
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: ebs-dynamic-practice
+    environment: dev
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
